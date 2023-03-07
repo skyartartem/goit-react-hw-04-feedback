@@ -36,15 +36,6 @@ export class App extends Component {
     return (
       <div
         className={css.container}
-        // style={{
-        // height: '100vh',
-        // display: 'flex',
-        // flexDirection: 'column',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // fontSize: 24,
-        // color: '#010101',
-        // }}
       >
         <Section title="Please leave feedback">
           <FeedbackOptions
