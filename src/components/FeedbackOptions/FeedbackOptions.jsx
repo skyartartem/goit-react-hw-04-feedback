@@ -10,7 +10,7 @@ export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
             key={i + 1}
             className={css[name]}
             onClick={() => {
-              onLeaveFeedback(name);
+              onLeaveFeedback[i](name);
             }}
           >
             {name}
@@ -22,7 +22,7 @@ export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
 };
 
 FeedbackOptions.propTypes = {
-  onLeaveFeedback: PropTypes.func.isRequired,
+  onLeaveFeedback: PropTypes.arrayOf(PropTypes.func).isRequired,
   options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad']))
     .isRequired,
 };
