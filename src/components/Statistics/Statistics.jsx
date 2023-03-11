@@ -11,7 +11,7 @@ export const Statistics = ({
     <>
       {options.map((name, i) => {
         return (
-            <p key={i} className={css[name]}>
+            <p key={i+1} className={css[name]}>
               {name}: <span className={css.numbers}>{statistic[name]}</span>
             </p>
         );
