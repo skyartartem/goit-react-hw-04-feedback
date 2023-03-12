@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './Statistics.module.css';
+import { Numbers, Category } from './Statistics.styled';
 
 export const Statistics = ({
   options,
@@ -11,18 +11,17 @@ export const Statistics = ({
     <>
       {options.map((name, i) => {
         return (
-            <p key={i+1} className={css[name]}>
-              {name}: <span className={css.numbers}>{statistic[name]}</span>
-            </p>
+          <Category key={i + 1} categoryName={name}>
+            {name}: <Numbers>{statistic[name]}</Numbers>
+          </Category>
         );
       })}
       <p>
-        Total: <span className={css.numbers}>{total}</span>
+        Total: <Numbers>{total}</Numbers>
       </p>
-      <p className={css.good}>
-        Positive feedback:{' '}
-        <span className={css.numbers}>{positivePercentage()}</span>%
-      </p>
+      <Category categoryName={"good"}>
+        Positive feedback: <Numbers>{positivePercentage()}</Numbers>%
+      </Category>
     </>
   );
 };
